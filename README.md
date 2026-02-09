@@ -13,7 +13,7 @@ No Electron. No heavy SDK. Just AppleScript + Discord IPC.
 - Discord activity type: **Listening**
 - Progress bar / remaining time
 - Updates only when the track or state changes
-- Extremely low memory usage (~0.1 MB)
+- Extremely low memory usage (~1 MB)
 - Native macOS (Apple Music app)
 
 ---

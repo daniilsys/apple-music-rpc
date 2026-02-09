@@ -30,8 +30,8 @@ No Electron. No heavy SDK. Just AppleScript + Discord IPC.
 ## 🚀 Build & Run
 
 ```bash
-git clone https://github.com/TON_USER/TON_REPO.git
-cd TON_REPO
+git clone https://github.com/deouf-dev/apple-music-rpc.git
+cd apple-music-rpc
 cargo build --release
 ./target/release/apple-music-discord-rpc
 ```

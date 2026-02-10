@@ -2,7 +2,7 @@
 name = "apple-music-rpc"
 version = "0.1.0"
 edition = "2024"
-authors = ["deouf-dev"]
+authors = ["daniilsys"]
 
 [dependencies]
 eframe = "0.33.3"

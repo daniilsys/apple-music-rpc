@@ -1,10 +1,16 @@
 [package]
 name = "apple-music-rpc"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2024"
 authors = ["daniilsys"]
 
 [dependencies]
-eframe = "0.33.3"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+ureq = { version = "3", features = ["json"] }
+url = "2"
+
+[profile.release]
+strip = true
+lto = true
+opt-level = "z"

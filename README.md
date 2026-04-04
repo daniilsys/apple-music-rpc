@@ -23,6 +23,7 @@ No Electron. No heavy SDK. Just AppleScript + Discord IPC.
 
 - **Track info** — song title, artist, and album displayed on your Discord profile
 - **Album artwork** — cover art fetched automatically via Deezer API
+- **Pause indicator** — shows a pause icon overlay when music is paused
 - **Progress bar** — shows elapsed and remaining time
 - **Smart updates** — only updates Discord when the track or playback state changes
 - **Auto-reconnect** — reconnects automatically if Discord restarts

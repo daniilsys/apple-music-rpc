@@ -92,8 +92,14 @@ pub fn set_activity_now_playing(stream: &mut UnixStream, np: &NowPlaying) -> io:
         None
     };
 
-    let artwork_url =
-        artwork::fetch_artwork_url(&np.artist, &np.track).unwrap_or_else(|| "am_icon_001".to_string());
+    let artwork_url = artwork::fetch_artwork_url(&np.artist, &np.track)
+        .unwrap_or_else(|| "am_icon_001".to_string());
+
+    let (small_image, small_text) = if np.state == PlayerState::Paused {
+        (Some("pause_icon".to_string()), Some("Paused".to_string()))
+    } else {
+        (Some("am_icon_001".to_string()), Some("Apple Music".to_string()))
+    };
 
     let command = SetActivityCommand {
         cmd: "SET_ACTIVITY",
@@ -109,6 +115,8 @@ pub fn set_activity_now_playing(stream: &mut UnixStream, np: &NowPlaying) -> io:
                 assets: Assets {
                     large_image: artwork_url,
                     large_text: np.album.clone(),
+                    small_image,
+                    small_text,
                 },
             }),
         },

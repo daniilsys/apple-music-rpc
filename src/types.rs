@@ -43,6 +43,10 @@ pub struct Timestamps {
 pub struct Assets {
     pub large_image: String,
     pub large_text: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub small_image: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub small_text: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -83,10 +87,6 @@ impl NowPlaying {
     }
 
     pub fn state_string(&self) -> String {
-        if self.album.is_empty() {
-            self.artist.clone()
-        } else {
-            format!("{} • {}", self.artist, self.album)
-        }
+        self.artist.clone()
     }
 }
